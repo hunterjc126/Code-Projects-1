@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBC Thumb News</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script>
+        function checkPassword() {
+        const password = prompt("Enter the password:");
+
+        if (password === "Thumb24") {
+         alert("Access granted!");
+        } else {
+         window.location.href = "denied.html";
+        }
+    }
+
+  checkPassword();
+</script>
+
+
+    <header>
+        <nav>
+            <a href="https://www.bbc.co.uk">Home</a>
+            <a href="https://www.bbc.co.uk/iplayer">IPlayer</a>
+            <a href="https://www.bbc.co.uk/sounds/Thumb">Sounds</a>
+            <a href="https://www.bbc.co.uk/news">News</a>
+            <a href="https://www.bbc.co.uk/sport">Sport</a>
+            <a href="https://www.bbc.co.uk/weather">Weather</a>
+            <a href="bitesize.html" target="_blank">Bitesize</a>
+            <a href="https://www.bbc.co.uk/cbbc">CBBC</a>
+            <a href="https://www.bbc.co.uk/cbeebies">Cbeebies</a>
+            <a href="https://www.bbc.co.uk/cbeebies/parenting">Cbeebies Parenting</a>
+            <a href="https://www.bbc.co.uk/cbbc/curations/cbbc-help">CBBC Help</a>
+            <a href="index.html">Thumb News</a>
+            <a href="Saja">Saja
+            <a href="https://www.bbc.co.uk/Notifications">Notifications</a>
+            <a href="account.html">Sign in</a>
+        </nav>
+        <img src="UntitledF8.png" alt="BBC Thumb News Logo" width="400" height="200">
+        <h1>BBC Thumb News</h1>
+        <br>
+        <h1>The Website of Real News</h1>
+    </header>
+    <br>
+    <h2>Top Stories:</h2>
+    <h3>US & Greenland:</h3>    
+    <br>
+    <p>Donald Trump Wants To Take Over Greenland Since The 19/1/2026</p>
+    <br>
+    <h2>Regional News:</h2>
+    <p>For the regional news, you need to sign in to choose where you live.
+        <a href="https://account.bbc.com/" target="_blank">BBC account login</a>
+        
+        <br>
+        <a href="regional.html">Regional Thumb News</a>
+    </p>
+    <h2>Sport:</h2>
+    <br>
+    <h3>Football:</h3>
+    <p>Sorry, we cant get the sports news Today, try BBC Sport.</p>
+    <br>
+    <h3>Rugby:</h3>
+    <p>Sorry, we cant get the sports news Today, try BBC Sport. </p>
+    <br>
+    <h3>Formula 1:</h3>
+    <p>Sorry, we cant get the sports news Today, try BBC Sport.</p>
+    <br>
+    <h3>Formula 2:</h3>
+    <p>Sorry, we cant get the sports news Today, try BBC Sport.</p>
+    <br>
+    <h3>more:</h3>
+    <p>Go to: </p>
+     <a href="https://www.bbc.co.uk/sport" target="_blank">BBC Sport</a>
+    
+   <h2>Weather:</h2>
+   <section id="weather">
+        <script>
+            // Paste your actual API key here
+            const apiKey = "c70ebd9fab3ac0fe0d99c3273b615873";  
+            const city = "Swindon"; // Change to any city you want
+
+            // Free Current Weather API endpoint
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+             const weatherSection = document.getElementById("weather");
+                if (data.cod !== 200) {
+                weatherSection.innerHTML = `<p>Error: ${data.message}</p>`;
+                return;
+                }
+                weatherSection.innerHTML = `
+                <p><strong>City:</strong> ${data.name}</p>
+                <p><strong>Temperature:</strong> ${data.main.temp} °C</p>
+                <p><strong>Weather:</strong> ${data.weather[0].description}</p>
+                <p><strong>Humidity:</strong> ${data.main.humidity}%</p>
+                <p><strong>Wind Speed:</strong> ${data.wind.speed} m/s</p>
+                `;
+            })
+            .catch(error => console.error("Error fetching weather data:", error));
+        </script>
+    </section>
+
+
+
+
+
+   <h3>Wales:</h3>
+   <P>In Cardiff it is 8 Degrees.  </P>
+   <br>
+    <h3>England:</h3>
+    <p>In London it is 9 Degrees. For Swindon API go to top of Weather.</p>
+    <br>
+    <h3>Scotland:</h3>
+    <p>In  Glasgow it is  7 Degrees. </p>
+    <br>
+    <h3>Northern Ireland:</h3>
+    <p>In Belfast it is 7 Degrees.</p>
+   <br>
+   <h3>Ireland:</h3>
+   <p>In Dublin it is 8 Degrees.</p>
+   <a href="https://www.metoffice.gov.uk/" target="_blank">weather updates</a>
+   <br>
+   <br>
+   <h2>Upgrade</h2>
+   <p>When you upgrade to BBC Thumb News + you get updates evry 1 or 2 hours, and you get BBC Spotlight videos from up to 200 days!!! (subsription £10)</p>
+   <a href="upgrade.html"target="_blank">Upgrade Now!</a>
+</body>
+
+<footer>
+    <p>Copyright BBC Thumb News 2026</p>
+</footer>
+</html>
